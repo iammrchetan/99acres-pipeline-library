@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 
-def checkoutGitRepository(path, url, branch, credentialsId = null, poll = true, timeout = 10, depth = 0, reference = ''){
+def call(path, url, branch, credentialsId = null, poll = true, timeout = 10, depth = 0, reference = ''){
     def branch_name = reference ? 'FETCH_HEAD' : "*/${branch}"
     dir(path) {
         checkout(
